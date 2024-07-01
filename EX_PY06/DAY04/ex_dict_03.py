@@ -16,14 +16,14 @@ print(f'키 추출 : {result}, {type(result)}')
 
 ##[Dict에서 값만 추출하는 메서드 values()]---------------------------------------
 result=p1.values()
-print(f'키 추출 : {result}, {type(result)}')
+print(f'값 추출 : {result}, {type(result)}')
 
 ##[Dict에서 키/값을 묶어서 추출하는 메서드 items()]---------------------------------------
 #                    => 튜플로 묶어서 추출
 result=p1.items()
-print(f'키 추출 : {result}, {type(result)}')
+print(f'야이템 추출 : {result}, {type(result)}')
 result=list(result)
-print(f'키 추출 : {result[0]}, {type(result[0])}')
+print(f'0번 아이템 추출 : {result[0]}, {type(result[0])}')
 
 
 
