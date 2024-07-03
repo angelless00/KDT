@@ -302,6 +302,382 @@ menu=["김밥","라면","튀김"]
 for i in menu:
     print(f'오늘의 메뉴: {i}')
 
+# 143
+stock= ["SK하이닉스", "삼성전자", "LG전자"]
+for i in stock:
+    print(len(i))
+
+# 144
+animal= ['dog', 'cat', 'parrot']
+for i in animal:
+    print(len(i))
+
+# 145
+animal= ['dog', 'cat', 'parrot']
+for i in animal:
+    print(animal[i][0])
+
+# 145
+animal= ['dog', 'cat', 'parrot']
+for i in animal:
+    print(i[0])
+
+# 146
+nums = [1, 2, 3]
+for i in nums:
+    print(f'3x{i}')
+
+# 147
+nums = [1, 2, 3]
+for i in nums:
+    print(f'3x{i}={3*i}')
+
+# 148
+word = ["가", "나", "다", "라"]
+for i in range(1,len(word)):
+    print(word[i])
+
+# 149
+word = ["가", "나", "다", "라"]
+for i in range(0,len(word),2):
+    print(word[i])
+
+# 149
+word = ["가", "나", "다", "라"]
+for i in range(0,len(word),-1):
+    print(word[i])
+
+# 150
+word = ["가", "나", "다", "라"]
+for i in range(len(word)-1,-1,-1):
+    print(word[i])
+
+# 151
+nums=[3,-20,-3,44]
+for i in nums:
+    if i<0:
+        print(i)
+
+# 152
+nums=[3,100,23,44]
+for i in nums:
+    if i%3==0:
+        print(i)
+
+# 153
+nums=[13,21,12,14,30,18]
+for i in nums:
+    if i<20 and i%3==0:
+        print(i)
+
+# 154
+msg= ["I", "study", "python", "language", "!"]
+for i in msg:
+    if len(i)>=3:
+        print(i)
+
+# 155
+msg = ["A", "b", "c", "D"]
+for i in msg:
+    if 'A'<=i<='Z':
+        print(i)
+
+# 156
+msg = ["A", "b", "c", "D"]
+for i in msg:
+    if 'a'<=i<='a':
+        print(i)
+
+# 157
+animal = ['dog', 'cat', 'parrot']
+for i in animal:
+    print(i.upper())
+
+# 158
+msg = ['hello.py', 'ex01.py', 'intro.hwp']
+for i in msg:
+    j=i.split('.')
+    print(j[0])
+
+# 159
+msg = ['intra.h', 'intra.c', 'define.h', 'run.py']
+for i in msg:
+    j=i.split('.')
+    if j[1]=='h':
+        print(i)
+
+# 160
+file_name = ['intra.h', 'intra.c', 'define.h', 'run.py']
+for i in file_name:
+    j=i.split('.')
+    if j[1]=='h' or j[1]=='c':
+        print(i)
+
+# 161
+for num in range(100):
+    print(num)
+
+# 162
+for i in range(2002,2051,4):
+    print(i)
+
+# 163
+for i in range(3,31,3):
+    print(i)
+    
+# 164
+for i in range(99,-1,-1):
+    print(i)
+
+# 165
+for i in range(10):
+    print('0.',i,sep='')
+
+# 166
+for i in range(1,10):
+    print(f'3x{i}={3*i}')
+
+# 167
+for i in range(1,10,2):
+    print(f'3x{i}={3*i}')
+
+# 168
+total=0
+for i in range(1,11):
+    total=total+i
+print(f'합 : {total}')
+
+# 169
+total=0
+for i in range(1,11,2):
+    total=total+i
+print(f'합 : {total}')
+
+# 170
+total=1
+for i in range(1,11):
+    total=total*i
+print(f'합 : {total}')
+
+# 171
+price_list = [32100, 32150, 32000, 32500]
+for i in price_list:
+    print(i)
+
+# 172
+price_list = [32100, 32150, 32000, 32500]
+for i,price in enumerate(price_list):
+    print(i,price)
+
+# 173
+price_list = [32100, 32150, 32000, 32500]
+for i,price in enumerate(price_list):
+    print(3-i,price)
+
+# 174
+price_list = [32100, 32150, 32000, 32500]
+for i in range(1,len(price_list)):
+    print(90+10*i,price_list[i])
+
+# 175
+my_list = ["가", "나", "다", "라"]
+for i in range(3):
+    print(my_list[i],my_list[i+1])
+
+# 176
+my_list = ["가", "나", "다", "라","마"]
+for i in range(3):
+    print(my_list[i],my_list[i+1],my_list[i+2])
+
+# 177
+my_list = ["가", "나", "다", "라"]
+for i in range(3):
+    print(my_list[3-i],my_list[2-i])
+
+# 178
+my_list = [100, 200, 400, 800]
+for i in range(3):
+    print(my_list[i])
+
+# 179
+my_list = [100, 200, 400, 800, 1000, 1300]
+for i in range(4):
+    print((my_list[i]+my_list[i+1]+my_list[i+2])/3)
+
+# 180
+low_prices  = [100, 200, 400, 800, 1000]
+high_prices = [150, 300, 430, 880, 1000]
+volatilty=[]
+for i in range(5):
+    volatilty.append(high_prices[i]-low_prices[i])
+print(volatilty)
+
+# 181
+apart=[['101호','102호'],['201호','202호'],['301호','302호']]
+
+# 182
+stock=[["시가",100,200,300],["종가",80,210,330]]
+
+# 183
+stock={"시가":[100,200,300],"종가":[80,210,330]}
+
+# 184
+stock={"10/10":[80,110,70,90],"10/11":[210,230,190,200]} 
+
+# 185
+apart = [ [101, 102], [201, 202], [301, 302] ]
+for i in range(3):
+    for j in range(2):
+        print(apart[i][j],'호')
+
+# 187
+apart = [ [101, 102], [201, 202], [301, 302] ]
+for i in apart[::-1]:
+    for j in range(2):
+        print(i[j],'호')
+
+# 188
+apart = [ [101, 102], [201, 202], [301, 302] ]
+for i in apart[::-1]:
+    for j in i[::-1]:
+        print(i[j],'호')
+
+# 188
+apart = [ [101, 102], [201, 202], [301, 302] ]
+for i in apart:
+    for j in i:
+        print(j,'호')
+        print('-----')
+
+# 189
+apart = [ [101, 102], [201, 202], [301, 302] ]
+for i in apart:
+    for j in i:
+        print(j,'호')
+    print('-----')
+
+# 190
+apart = [ [101, 102], [201, 202], [301, 302] ]
+for i in apart:
+    for j in i:
+        print(j,'호')
+print('-----')
+
+# 191 
+data = [
+    [ 2000,  3050,  2050,  1980],
+    [ 7500,  2050,  2050,  1980],
+    [15450, 15050, 15550, 14900]
+]
+for i in data:
+    for j in i:
+        print(j*1.00014)
+
+# 192 
+data = [
+    [ 2000,  3050,  2050,  1980],
+    [ 7500,  2050,  2050,  1980],
+    [15450, 15050, 15550, 14900]
+]
+for i in data:
+    for j in i:
+        print(j*1.00014)
+    print('----')
+
+# 193 
+data = [
+    [ 2000,  3050,  2050,  1980],
+    [ 7500,  2050,  2050,  1980],
+    [15450, 15050, 15550, 14900]
+]
+result=[]
+for i in data:
+    for j in i:
+        result.append(j*1.00014)
+print(result)
+
+# 194 
+data = [
+    [ 2000,  3050,  2050,  1980],
+    [ 7500,  2050,  2050,  1980],
+    [15450, 15050, 15550, 14900]
+]
+result=[]
+for i in data:
+    sub=[]
+    for j in i:
+        sub.append(j*1.00014)
+    result.append(sub)
+print(result)
+
+#195
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+
+for i in range(1,4):
+    print(ohlc[i][3])
+
+#196
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+
+for i in range(1,4):
+    if ohlc[i][3]>150:
+        print(ohlc[i][3])
+
+
+#197
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+
+for i in range(1,4):
+    if ohlc[i][3]>=ohlc[i][0]:
+        print(ohlc[i][3])
+
+
+#198
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+volatility=[]
+for i in range(1,4):
+    volatility.append(ohlc[i][1]-ohlc[i][2])
+print(volatility)
+
+#199
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+
+for i in range(1,4):
+    if ohlc[i][3]>ohlc[i][0]:
+        print(ohlc[i][3]-ohlc[i][0])
+
+#200
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+diff=0
+for i in range(1,4):
+    diff=diff+ohlc[i][3]-ohlc[i][0]
+print(diff)
+
+
+
+
+
+
+
+
 
 
 
