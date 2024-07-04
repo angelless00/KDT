@@ -78,7 +78,7 @@ for i in range(count+1):
         continue
     print(i)
 
-# p.211 연습문제: 3으로 끝나는 숫자만 출력하기
+# p.211 18.5 연습문제: 3으로 끝나는 숫자만 출력하기
 i=0
 while True:
     if i%10==3:
@@ -87,6 +87,18 @@ while True:
     if i>73:
         break  
     i+=1          
+
+## 더깔끔한 추가 코드 >_<
+i=-1
+while True:
+    if i>72:
+        break  
+    i+=1    
+    if i%10==3:
+        print(i, end=' ')
+      
+      
+
 
 # p.212 18.6 심사문제 : 두 수 사이의 숫자 중 3으로 끝나지 않는 숫자 출력하기
 start,stop=map(int,input().split())
@@ -101,6 +113,7 @@ while True:
         break
     print(i,end=' ')
     i+=1
+
 
 # p.213 19.1 중첩 루프 사용하기
 for i in range(5):

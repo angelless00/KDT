@@ -16,7 +16,8 @@ print(d1.intersection(d2),d1&d2)
 print(d1.difference(d2),d1-d2)
 
 
-
+## add() 메서드
+print(d1.add(d2))
 
 
 
