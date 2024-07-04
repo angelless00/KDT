@@ -6,6 +6,4 @@ for i in range(num):
             print(' ',end='')
         elif num-i<=j<=num+i:
             print('*',end='')
-        else:
-            print(' ',end='')
     print()

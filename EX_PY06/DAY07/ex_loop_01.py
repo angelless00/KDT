@@ -5,3 +5,12 @@ for i in range(5):
     print(f'i:{i}\\n') 
 
 ## [2] 대각선 * 출력 -------------------------------------------------------
+for v in range(5):
+    for h in range(v+1):
+        # if h==v:
+        #     print('*')
+        # else:
+        #     print(' ',end='')
+        print('*' if h==v else' ',end='\n' if h==v else'')
+
+
