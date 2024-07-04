@@ -14,15 +14,30 @@ print(person.get('name','몰라'))
 print(person.get('gender','없음'))
 print(person.get('gender'))
 
+# [메서드 - 키와 값 추가 메서드 u]------------------
+person['gender']='남'
 
-msg="Hello Good Luck"
-alpha=set(msg)
-save={}
-print(alpha)
-for m in alpha:
-    print(m,msg.count(m))
-    save[m]=msg.count(m)
-print(save)
+# [메서드 - 수정및 업데이트 메서드 udate(k=v)]
+
+print(person)
+person.update(gender='어린이',job='학생')
+
+person.update({'phone':'010','birth':'240101'})
+print(person)
+##**{'weight':100,'height':170}
+## weight=100,height=170
+person.update(**{'weight':100,'height':170})
+print(person)
+
+
+# msg="Hello Good Luck"
+# alpha=set(msg)
+# save={}
+# print(alpha)
+# for m in alpha:
+#     print(m,msg.count(m))
+#     save[m]=msg.count(m)
+# print(save)
  
 
 
