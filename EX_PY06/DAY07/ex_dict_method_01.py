@@ -17,7 +17,7 @@ print(person.get('gender'))
 # [메서드 - 키와 값 추가 메서드 u]------------------
 person['gender']='남'
 
-# [메서드 - 수정및 업데이트 메서드 udate(k=v)]
+# [메서드 - 수정및 업데이트 메서드 update(k=v)]
 
 print(person)
 person.update(gender='어린이',job='학생')
