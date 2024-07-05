@@ -671,16 +671,111 @@ for i in range(1,4):
     diff=diff+ohlc[i][3]-ohlc[i][0]
 print(diff)
 
+#201 
+def print_coin():
+    print('비트코인')
+    return
 
+#202
+print_coin()
 
+#203
+for _ in range(100):
+    print_coin()
 
+#204
+def print_coin():
+    for _ in range(100):
+        print('비트코인')
+        return
 
+#205
+# rutrun이 없음
 
+#206
+# A 
+# B 
+# C 
+# A 
+# B
 
+#207
+# A 
+# C 
+# B
 
+#208
+# A
+# C
+# B
+# E
+# D 
 
+#209
+# B
+# A
 
+#210
+# B
+# C
+# B
+# C
+# B
+# C
+# A
 
+#211
+#안녕
+#하이
+
+#212
+#7
+#15
+
+#213
+#매개변수가 없음
+
+#214
+#함수정의엔 int 매개변수를 요구하는데 str타입을 넣음
+
+#215
+def print_with_smile(msg):
+    print(f'{msg}:D')
+    return
+
+#216
+print_with_smile("안녕하세요")
+
+#217
+def print_upper_price(price):
+    print(price*1.3)
+    return
+
+#218
+def print_sum(num1,num2):
+    print(num1+num2)
+    return
+
+#219
+def print_arithmetic_operation(num1,num2):
+    print(f'{num1}+{num2}={num1+num2}')
+    print(f'{num1}-{num2}={num1-num2}')
+    print(f'{num1}*{num2}={num1*num2}')
+    print(f'{num1}/{num2}={num1/num2}')
+    return
+
+print(print_arithmetic_operation(3,4))
+
+# 220
+def print_max(num1,num2,num3):
+    max_value=0
+    if num1>max_value:
+        max_value=num1
+    if num2>max_value:
+        max_value=num2
+    if num3>max_value:
+        max_value=num3
+    return max_value
 
 
 
