@@ -25,14 +25,7 @@ for i in range(1,row+1):            #카운팅
                         cnt=cnt+1
             matrix[i][j]=cnt
 
-del matrix[row+1]           # 테두리 지우기
-del matrix[0]
-
-for i in range(row):
-    del matrix[i][0]
-    del matrix[i][col]
-
-for i in range(row):
-    for j in range(col):
+for i in range(1,row+1):              #프린팅
+    for j in range(1,col+1):
         print(f'{matrix[i][j]:^3}',end='')
     print()
