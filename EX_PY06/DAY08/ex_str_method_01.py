@@ -78,11 +78,10 @@ print(f'p의 인덱스 : {idx}')
 idx=msg.rfind('p',0,idx)
 print(f'p의 인덱스 : {idx}')
 
-# - 파일명에서 확장자 txt 찾기
-# - hello.txt
+# - 파일명에서 확장자 찾기
 files=['hello.txt','2024년상반기경제분석.doc','kakao_1234452423.jpg']
 for m in files:
-    idx=m.find('.')
-    print(f'파일의 확장자 : {m[idx+1:]}')
+    dot=m.find('.')
+    print(f'파일의 확장자 : {m[dot+1:]}')
 
 
