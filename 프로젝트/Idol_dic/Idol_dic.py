@@ -1,9 +1,10 @@
 Idol_list={'그룹1':[2010,'보이그룹',{'멤버':['멤버1','멤버2','멤버3']}],
            '그룹2':[2011,'걸그룹',{'멤버':['멤1','멤2','멤3']}]}
+
 def generation(year):
     if year<=1998:
         result='1세대'
-    elif year<=2003:
+    elif year<=2002:
         result='1.5세대'
     elif year<=2008:
         result='2세대'
@@ -17,8 +18,20 @@ def generation(year):
         result='4세대'
     return result    
 
+def first_menu():
+    print(f'{"-":-^21}')
+    print(f'{"|    M  E  N  U     |":20}')
+    print(f'{"-":-^21}')
+    print(f'{"| 1.그룹명 검색     |":20}')
+    print(f'{"| 2.세대별 검색     |":20}')
+    print(f'{"| 3.아이돌 멤버 검색|":20}')
+    print(f'{"| 4.새 아이돌 추가  |":20}')
+    print(f'{"| Q.종료            |":20}')
+    print(f'{"-":-^21}')
+    
 while True:
-    first_in=input('1. 그룹명 검색\n2. 세대별검색\n3. 아이돌 멤버검색\n4. 새 아이돌 추가\nQ. 종료\n입력:')
+    first_menu()
+    first_in=input('입력:')
     
     if first_in=='1':
         while True:
@@ -92,7 +105,7 @@ while True:
                 for idol in Idol_list:
                     for mem_name in Idol_list[idol][2]['멤버']:
                         if mem_name==name_in:
-                            print(f'{name_in}은 {Idol_list[idol][1]}에 데뷔한 {idol}의 멤버입니다.')
+                            print(f'{name_in}은 {Idol_list[idol][0]}에 데뷔한 {idol}의 멤버입니다.')
 ##잘못된 입력 체크
 
 
@@ -101,6 +114,7 @@ while True:
         print('입력완료')
 
     elif first_in=='q' or first_in=='Q':
+        print('아이돌 백과사전을 종료합니다.')
         break
 
     else: print('잘못된 입력입니다.')
