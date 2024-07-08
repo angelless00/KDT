@@ -44,9 +44,47 @@ def print_menu():
 # 함수기능 : 연산 수행 후 결과를 반환하는 함수
 # 함수이름 : clac
 # 매개변수 : 함수명
-# 함수결과 : 
+# 함수결과 : 없음
 #-----------------------------------------------------------------------------------------------
+def calc(func,op):
+    # num1,num2=input('정수 2개(예:10 2) : ').split()
+    # num1=int(num1)
+    # num2=int(num2)
+    data=input('정수 2개(예:10 2):')
+    if check_data(data,2):
+        data=data.split()
+        print(f'결과 :{data[0]}{op}{data[1]}={func(int(data[0]),int(data[1]))}')
+    else:
+        print(f'{data}는 올바른 데이터가 아닙니다.')
 
+#-----------------------------------------------------------------------------------------------
+# 함수기능 : 입력 받은 데이터가 유효한 데이터인지 검사하는 함수
+# 함수이름 : check_data
+# 매개변수 : str데이터(예:'10 3'), 데이터 개수
+# 함수결과 : True 또는 False
+#-----------------------------------------------------------------------------------------------
+# def check_data(data,count):   => 내코드
+#     data=data.split()
+#     result=True
+#     if len(data)!=count:
+#         result=False
+#     for i in data:
+#         if i.isdecimal=False:
+#             result=False
+#             break
+#     return result
+
+def check_data(data,count):     #강사님코드
+    data=data.split()
+    if len(data)==count:
+        isOk=True
+        for d in data:
+            if not d.isdecimal():
+                isOk=False
+                break
+            return isOk
+        else:
+            return False
 
 
 ## 계산기 프로그램---------------------------------------------------------------------------------
@@ -58,28 +96,28 @@ while True:
     print_menu()
 
     #메뉴 션택 요청
-    choice=int(input('메뉴 선택 : '))
+    choice=input('메뉴 선택 : ')
+    if choice.isdecimal:
+        choice=int(choice)
+    else:
+        print("1~5사이의 숫자만 입력하세요.")
+        continue
 
     #종료 조건(5번 메뉴 선택) 처리
     if choice==5:
         break
     elif choice==1:
         print('덧셈')
-        num1,num2=input('정수 2개(예:10 2) : ').split()
-        num1=int(num1)
-        num2=int(num2)
-        print(f'{num1}+{num2}={plus(num1,num2)}')
+        calc(plus,'+')
     elif choice==2:
         print('뺄셈')
-        num1,num2=input('정수 2개(예:10 2) : ').split()
-        num1=int(num1)
-        num2=int(num2)
-        print(f'{num1}-{num2}={minus(num1,num2)}')
-    elif choice==2:
+        calc(minus,'-')
     elif choice==3:
         print('곱셈')
+        calc(cross,'*')
     elif choice==4:
         print('나눗셈')
+        calc(div,'/')
 
 
 
