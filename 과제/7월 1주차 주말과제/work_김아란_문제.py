@@ -777,6 +777,99 @@ def print_max(num1,num2,num3):
         max_value=num3
     return max_value
 
+#221
+def print_reverse(msg):
+    print(msg[::-1])
+    return
+
+#222
+def print_score(score):
+    ave=sum(score)/len(score)
+    return ave
+#223
+def print_even(nums):
+    print(nums[::2])
+    return
+
+#224
+def print_keys(dic):
+    for i in dic.keys():
+        print(i)
+    return
+
+#225
+my_dict = {"10/26" : [100, 130, 100, 100],
+           "10/27" : [10, 12, 10, 11]}
+def print_value_by_key(dic,day):
+    print(dic[day])
+    return
+
+#226
+#227
+def print_5xn(msg):
+    div=len(msg)//5
+    for i in range(div+1):
+        print(msg[5*i:5*(i+1)])
+    return
+
+#227
+def printmxn(msg,num):
+    div=len(msg)//num
+    for i in range(div+1):
+        print(msg[num*i:num*(i+1)])
+    return
+
+#228
+def calc_monthly_salary(annual_salary):
+    print(annual_salary//12)
+    return
+
+#229
+#왼쪽:100
+#오른쪽:200
+
+#230
+#왼쪽:200
+#오른쪽:100
+
+#231
+#4
+
+#232
+def make_url(str):
+    print(f'www.{str}.com')
+    return
+
+#233
+def make_list(str):
+    msg=list(str)
+    return msg
+
+#234
+def pickup_even(nums):
+    even=[i for i in nums if not i%2]
+    return even
+
+#235
+def convert_int(num):
+    num=int(num.replace(',',''))
+    return num
+
+#236
+#22
+
+#237
+#22
+
+#238
+#24
+
+#239
+#16
+
+#240
+#28
+
 
 
 
