@@ -10,6 +10,6 @@
 
 FILENAME='result.txt'  #중요한 변수일땐 대문자(지우지마!!)
 f=open(FILENAME,mode='w') #open()은 기본적으로 읽기파일로 열림! 쓰기모드로 바꿔줘
-f.write("HELLO")
+f.write("HELLO~")
 print("Good Luck",file=f) #파일에 데이터 출력하기
 f.close() #파일 닫기
