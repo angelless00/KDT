@@ -42,15 +42,16 @@ Idol_list={'R.ef':[1995,'보이그룹',{'멤버':['박철우','성대현','이�
            '샤이니':[2008,'보이그룹',{'멤버':['온유','종현','KEY','민호','태민']}],
            '2AM':[2008,'보이그룹',{'멤버':['정진운','조권','이창민','임슬옹']}],
            '2PM':[2008,'보이그룹',{'멤버':['JUN.K','닉쿤','택연','우영','준호','찬성']}],
-           '천상지희':[1997,'걸그룹',{'멤버':['린아','다나','선데이','스테파니']}],
-           '브라운아이드걸스':[1997,'걸그룹',{'멤버':['제아','미료','나르샤','가인']}],
-           '원더걸스':[1997,'걸그룹',{'멤버':['유빈','예은','선미','혜림']}],
-           '카라':[1997,'걸그룹',{'멤버':['박규리','한승연','니콜','구하라','강지형','허영지']}],
-           '소녀시대':[1997,'걸그룹',{'멤버':['태연','써니','티파니','효연','유리','수영','윤아','서현']}],
+           '천상지희':[2005,'걸그룹',{'멤버':['린아','다나','선데이','스테파니']}],
+           '브라운아이드걸스':[2006,'걸그룹',{'멤버':['제아','미료','나르샤','가인']}],
+           '원더걸스':[2007,'걸그룹',{'멤버':['유빈','예은','선미','혜림']}],
+           '카라':[2007,'걸그룹',{'멤버':['박규리','한승연','니콜','구하라','강지형','허영지']}],
+           '소녀시대':[2007,'걸그룹',{'멤버':['태연','써니','티파니','효연','유리','수영','윤아','서현']}],
            '비스트':[2009,'보이그룹',{'멤버':['윤두준','용준형','양요섭','이기광','손동운']}],
            '엠블랙':[2009,'보이그룹',{'멤버':['승호','지오','미르']}],
            '씨앤블루':[2010,'보이그룹',{'멤버':['정용화','강민혁','이정신']}],
            '인피니트':[2010,'보이그룹',{'멤버':['김성규','장동우','남우현','이성열','엘','이성종']}],
+           '제국의아이들':[2010,'보이그룹',{'멤버':['케빈','황광희','임시완','문준영','김태헌','정희철','하민우','박형식','김동준']}],
            '틴탑':[2010,'보이그룹',{'멤버':['천지','니엘','리키','창조']}],
            'B1A4':[2011,'보이그룹',{'멤버':['신우','산들','공찬']}],
            '블락비':[2011,'보이그룹',{'멤버':['태일','비범','재효','유권','박경','지코','피오']}],
@@ -73,6 +74,7 @@ Idol_list={'R.ef':[1995,'보이그룹',{'멤버':['박철우','성대현','이�
            '방탄소년단':[2013,'보이그룹',{'멤버':['진','슈가','제이홉','RM','지민','뷔','정국']}],
            '위너':[2014,'보이그룹',{'멤버':['강승윤','김진우','송민호','이승훈']}],
            '몬스타엑스':[2015,'보이그룹',{'멤버':['셔누','민혁','기현','형원','주헌','아이엠']}],
+           '데이식스':[2015,'보이그룹',{'멤버':['영케이','성진','원필','도운']}],
            '세븐틴':[2015,'보이그룹',{'멤버':['에스쿱스','정한','조슈아','준','호시','원우','우지','디에잇','민규','도겸','승관','버논','디노']}],
            '아스트로':[2016,'보이그룹',{'멤버':['MJ','진진','차은우','문빈','윤산하']}],
            '하이라이트':[2017,'보이그룹',{'멤버':['윤두준','양요섭','이기광','손동운']}],
@@ -113,7 +115,7 @@ Idol_list={'R.ef':[1995,'보이그룹',{'멤버':['박철우','성대현','이�
            '뉴진스':[2022,'걸그룹',{'멤버':['민지','하니','다니엘','해린','혜인']}],
            '베이비몬스터':[2024,'걸그룹',{'멤버':['루카','파리타','아사','아현','라미','로라','치키타']}]}
 
-
+#세대 결정
 def generation(year):
     if year<=1998:
         result='1세대'
@@ -130,7 +132,7 @@ def generation(year):
     else:
         result='4세대'
     return result    
-
+#초기메뉴
 def first_menu():
     print(f'{"-":-^21}')
     print(f'{"|    M  E  N  U     |":20}')
@@ -139,15 +141,17 @@ def first_menu():
     print(f'{"| 2.세대별 검색     |":20}')
     print(f'{"| 3.아이돌 멤버 검색|":20}')
     print(f'{"| 4.아이돌 멤버 삭제|":20}')
+    print(f'{"| 5.새 그룹 등록요청|":20}')
     print(f'{"| Q.종료            |":20}')
     print(f'{"-":-^21}')
-    
+#세대출력
 def generation_find(n_gene,Idol_list):
     print(f'{n_gene} 아이돌은',end=' ')
     for group_name in Idol_list:
         if generation(Idol_list[group_name][0])==n_gene:
             print(group_name,end=' ')
     print('이/가 포함되어 있습니다.')
+    print(f'{"-":-^50}')
 
 while True:
     first_menu()
@@ -159,15 +163,17 @@ while True:
             print(f'{"|B. 뒤로가기} |":15}')
             print(f'{"-":-^15}')
             find_group=input('그룹명 입력 : ')
-            if find_group=='b' or find_group=='B':
+            if find_group=='b' or find_group=='B' or find_group=='ㅠ':
                 break
             elif find_group not in Idol_list:
                 print(f'{find_group}에 대한 정보가 없습니다.')
+                print(f'{"-":-^50}')
             else:
                 print(f'{find_group}은 {Idol_list[find_group][0]}년도에 데뷔한 {Idol_list[find_group][1]}으로 ',end='')
                 for member in Idol_list[find_group][2]['멤버']:
                     print(member,end=' ')
                 print('이/가 소속되어있습니다.')
+                print(f'{"-":-^50}')
 
     elif first_in=='2':
         while True:
@@ -182,7 +188,7 @@ while True:
             print(f'{"| B. 뒤로가기 |":15}')
             print(f'{"-":-^15}')
             second_in=input('입력 :')
-            if second_in=='b' or second_in=='B':
+            if second_in=='b' or second_in=='B' or second_in=='ㅠ':
                 break
             elif second_in=='1':
                 generation_find('1세대',Idol_list)
@@ -200,6 +206,7 @@ while True:
                 generation_find('4세대',Idol_list)
             else:
                 print('잘못된 입력입니다.')
+                print(f'{"-":-^50}')
 
     elif first_in=='3':
         while True:
@@ -207,7 +214,7 @@ while True:
             print(f'{"|B. 뒤로가기} |":15}')
             print(f'{"-":-^15}')
             name_in=input('이름 입력 : ')
-            if name_in=='B' or name_in=='b':
+            if name_in=='B' or name_in=='b' or name_in=='ㅠ':
                 break
             else: 
                 exist=False
@@ -216,8 +223,10 @@ while True:
                         if mem_name==name_in:
                             exist=True
                             print(f'{name_in}은/는 {Idol_list[idol][0]}에 데뷔한 {idol}의 멤버입니다.')
+                            print(f'{"-":-^30}')
                 if not exist:
                     print(f'{name_in}에 대한 정보가 없습니다.')
+                    print(f'{"-":-^50}')
 
     elif first_in=='4':
         while True:
@@ -225,20 +234,37 @@ while True:
             print(f'{"|B. 뒤로가기} |":15}')
             print(f'{"-":-^15}')
             delete_group=input('삭제하고 싶은 멤버의 그룹입력 :')
-            if delete_group=='B' or delete_group=='b':
+            if delete_group=='B' or delete_group=='b' or delete_group=='ㅠ':
                 break
             elif delete_group not in Idol_list:
-                print(f'{delete_group}에 대한 정보가 없습니다.')
+                print(f'그룹 {delete_group}에 대한 정보가 없습니다.')
+                print(f'{"-":-^50}')
                 continue
             delete_mem=input('삭제하고 싶은 멤버 입력 : ')
-            idx=Idol_list[delete_group][2]['멤버'].index(delete_mem)
-            del Idol_list[delete_group][2]['멤버'][idx]
+            exist=False
+            for mem in Idol_list[delete_group][2]['멤버']:
+                if mem==delete_mem:
+                    exist=True
+                    idx=Idol_list[delete_group][2]['멤버'].index(delete_mem)
+                    del Idol_list[delete_group][2]['멤버'][idx]
+                    print(f'{delete_group}에서 {delete_mem}이 삭제되었습니다.')
+                    print(f'{"-":-^50}')
+            if not exist:
+                print(f'{delete_mem}은 이미 {delete_group}에 존재하지 않습니다.')
+                print(f'{"-":-^50}')
+
+
+    elif first_in=='5':
+        FILE=open('save_new_Idol.txt','w+',encoding='utf-8')
+        print('아이돌 정보등록을 관리자에게 요청할수 있습니다.')
+        print(f'{"-":-^30}')
+        new_groupname=input('그룹 이름을 등록하세요 : ')
+        FILE.write(new_groupname)
+        FILE.close()
 
 
 
-
-
-    elif first_in=='q' or first_in=='Q':
+    elif first_in=='q' or first_in=='Q' or first_in=='ㅂ':
         print('아이돌 백과사전을 종료합니다.')
         break
 
