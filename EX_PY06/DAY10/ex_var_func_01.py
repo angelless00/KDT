@@ -6,7 +6,7 @@
 # - 프로그램 실행 시 메모리 존재
 # - 프로그램 종료시 메모리에서 삭제
 ##----------------------------------------------------------------------------------------------- 
-name='홍길동'
+total=100
 
 ## 지역변수(Local Variable)-----------------------------------------------
 # - 함수(function)내에 존재하며 모든곳에서 사용가능
@@ -26,8 +26,27 @@ def addint(*nums):
         total=total+i
     return total
 
+def multiint(*nums):
+    total1=1
+    for i in nums:
+        total1=total1*i
+    return total1+total
 
+def multiint2(*nums):
+# 전역변수의 값을 변경할 경우 그냥 사용x
+    global total
+    for i in nums:
+        total=total*i
+    return total
 
+result1=addint(1)
+print(f'result1={result1}')
+result2=multiint(5)
+print(f'result2={result2}')
+print(f'total={total}')
+result3=multiint2(5)
+print(f'result3={result3}')
+print(f'total={total}')
 
 
 
