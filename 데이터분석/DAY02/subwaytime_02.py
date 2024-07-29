@@ -19,7 +19,7 @@ with open('subwaytime.csv',encoding='utf-8-sig') as f:
             max_num=row[4]
             max_station=row[3]
 
-print(f'새벽 3시 총 승차 인원수: {total_number:,}')
+print(f'새벽 3시 총 승차 인원수: {total_number:,}') 
 print(f'최대 승차역: {max_station}, 인원수: {max_num:,}')
 result.sort()   # 오름차순으로 정렬 result.sort(reverse=True)
 plt.figure(dpi=100)
