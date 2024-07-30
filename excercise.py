@@ -1,7 +1,18 @@
-students=[('Alice',3.9,20160303),
-          ('Bob',3.0,20160302),
-          ('Charlie',4.3,20160301)]
+Table={'Seoul':['South Korea','Asia',9655000],
+       'Tokyo':['Japan','Asia',14110000],
+       'Beijing':['China','Asia',21540000],
+       'London':['United Kingdom','Europe',14800000],
+       'Berlin':['Germany','Europe',3426000],
+       'Mexico City':['Mexico','America',21200000]}
 
-# 학번(students[2])을 기준으로 오름차순 정렬
-sorted_studen1=students[2]
-print(sorted_studen1)
+Table=sorted(Table,key=lambda x: x[i][2] for i in Table)
+
+print(Table)
+
+
+
+
+
+
+
+
