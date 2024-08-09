@@ -43,18 +43,18 @@ avg.replace(np.nan,0,inplace=True)
 #     conn.commit()
 
 # 평균값그래프
-x=pd.Series(list(range(8)))
-plt.figure(figsize=(10,10))
-plt.bar(x-0.2,avg[0],width=0.2,label='내한뮤지컬')
-plt.bar(x,avg[1],width=0.2,label='대극장뮤지컬')
-plt.bar(x+0.2,avg[2],width=0.2,label='소극장뮤지컬')
-plt.xticks(x,avg.index)
-plt.xlabel('지역',fontsize=15)
-plt.ylabel('평균가격',fontsize=15)
-plt.title('2023 지역별 뮤지컬 평균가격',fontsize=20)
-plt.legend()
-plt.grid()
-plt.show()
+# x=pd.Series(list(range(8)))
+# plt.figure(figsize=(10,10))
+# plt.bar(x-0.2,avg[0],width=0.2,label='내한뮤지컬')
+# plt.bar(x,avg[1],width=0.2,label='대극장뮤지컬')
+# plt.bar(x+0.2,avg[2],width=0.2,label='소극장뮤지컬')
+# plt.xticks(x,avg.index)
+# plt.xlabel('지역',fontsize=15)
+# plt.ylabel('평균가격',fontsize=15)
+# plt.title('2023 지역별 뮤지컬 평균가격',fontsize=20)
+# plt.legend()
+# plt.grid()
+# plt.show()
 
 def plot3(data):
     x=pd.Series(list(range(7)))
@@ -70,8 +70,33 @@ def plot3(data):
     plt.grid()
     plt.show()
 
-plot3('개막편수')
-plot3('상연횟수')
+# plot3('개막편수')
+# plot3('상연횟수')
+plot3('판매수')
+
+popular_music_DF=DF('popular_avg','region')
+wage_DF=DF('region_wage','region')
+theater_DF=DF('theater','지역')
+
+# # 최종그래프
+# plt.figure(figsize=(10,10))
+# x=pd.Series(list(range(7)))
+# fig,ax_1=plt.subplots()
+# ax_1.set_title('지역별 평균임금과 평균 문화가격비교',fontsize=20)
+# ax_1.bar(x-0.2,popular_music_DF['large'],width=0.2,label='대형콘서트')
+# ax_1.bar(x,avg[1][:-1],width=0.2,label='대극장뮤지컬')
+# ax_1.bar(x+0.2,theater_DF['평균티켓가격'],width=0.2,label='연극')
+# ax_1.set_xlabel('지역')
+# ax_1.set_ylabel('평균티켓가격')
+# ax_1.legend()
+# ax_2=ax_1.twinx()
+# ax_2.plot(wage_DF['wage'],marker='o',label='평균임금',color='r')
+# ax_2.legend(loc=2)
+# ax_2.set_ylabel('평균임금')
+# ax_2.set_yticks([0,1000000,2000000,3000000,4000000])
+# plt.show()
+
+
 
 
 curs.close()
