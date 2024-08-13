@@ -1,6 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
+# callable 에러
 import collections
 
 if not hasattr(collections,'callable'):
