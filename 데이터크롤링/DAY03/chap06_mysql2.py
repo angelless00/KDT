@@ -13,7 +13,7 @@ if not hasattr(collections,'callable'):
 #에러해결 종료
 
 def store(conn,cur,title,content):
-    cur.execute('insert into infinite (title,content) values ("%s","%s")',(title,content))
+    cur.execute('insert into pages (title,content) values ("%s","%s")',(title,content))
     conn.commit()
 
 def get_links(conn,cur,articleUrl):
@@ -35,7 +35,7 @@ def main():
     cur=conn.cursor()
     random.seed(None)
 
-    links=get_links(conn,cur,'/wiki/Infinite_(group)')
+    links=get_links(conn,cur,'/wiki/Kevin_Bacon')
     try:
         while len(links)>0:
             newArticle=links[random.randint(0,len(links)-1)].attrs['href']

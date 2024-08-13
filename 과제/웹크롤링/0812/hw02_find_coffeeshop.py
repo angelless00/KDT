@@ -18,6 +18,7 @@ while True:
             if TF==1:
                 search_data.loc[count]=cafe_data.iloc[row]
                 count+=1
+        print(f'검색된 매장수: {count-1}')
         print(tabulate(search_data,headers='keys',tablefmt='psql')) 
                 
     
