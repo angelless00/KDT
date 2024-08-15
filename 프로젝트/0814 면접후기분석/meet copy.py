@@ -56,8 +56,19 @@ def naver(end_page,job):
 # datamining.to_csv('datascientist.csv')
 
 # 데이터 엔지니어 면접후기 추출
-datamining=naver(10,'데이터엔지니어')
-datamining.to_csv('dataengineer.csv')
+# datamining=naver(10,'데이터엔지니어')
+# datamining.to_csv('dataengineer.csv')
 
 
-    
+# 머신러닝엔지니어 면접후기 추출
+# datamining=naver(10,'머신러닝엔지니어')
+# datamining.to_csv('machineengineer.csv')
+
+# 딥러닝엔지니어 면접후기 추출
+# datamining=naver(10,'딥러닝엔지니어')
+# datamining.to_csv('deepengineer.csv')
+
+# 인공지능 면접후기 추출
+dataminig=naver(8,'인공지능')
+dataminig.to_csv('ai.csv')
+
