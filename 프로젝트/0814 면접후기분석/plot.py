@@ -51,11 +51,10 @@ def wordcld(dict_tags):
     # 한글을 분석하기위해 font를 한글로 저장
     path=r'c:\Windows\Fonts\malgun.ttf'
 
-    img_mask=np.array(Image.open('computer.svg'))
     wc=WordCloud(font_path=path,width=400,height=400,
                 background_color='white',max_font_size=200,
                 repeat=True,
-                colormap='Accent',mask=img_mask)
+                colormap='Accent')
     cloud=wc.generate_from_frequencies(dict_tags)
 
     plt.figure(figsize=(10,8))
@@ -83,16 +82,16 @@ def plot_bar():
     
     # 주요 단어 바그래프용 데이터프레임
 
-    bar=pd.concat([dataDF.loc['질문'],dataDF.loc['생각'],dataDF.loc['개발'],dataDF.loc['공부'],dataDF.loc['사용'],dataDF.loc['알고리즘']],axis=1)
+    bar=pd.concat([dataDF.loc['질문'],dataDF.loc['생각'],dataDF.loc['개발'],dataDF.loc['공부'],dataDF.loc['사용'],dataDF.loc['알고리즘'],dataDF.loc['경험']],axis=1)
 
     
     import koreanize_matplotlib
-    x=pd.Series(range(6))
+    x=pd.Series(range(7))
     plt.figure(figsize=(10,10))
     a=plt.bar(x-0.2,bar.loc['개발자'],width=0.2,label='개발자')
     b=plt.bar(x,bar.loc['데이터엔지니어'],width=0.2,label='데이터엔지니어')
     c=plt.bar(x+0.2,bar.loc['머신러닝엔지니어'],width=0.2,label='머신러닝엔지니어')
-    plt.xticks(x,['질문','생각','개발','공부','사용','알고리즘'])
+    plt.xticks(x,['질문','생각','개발','공부','사용','알고리즘','경험'])
     plt.title('직업별 면접후기 주요 단어 언급 비율 (티스토리)',fontsize=20)
     plt.xlabel('주요 단어')
     plt.ylabel('언급비율(%)')
@@ -116,10 +115,10 @@ deepeng='deepengineer.csv'
 #ai='ai.csv'
 
 # 워드 클라우드 플롯
-dict_tags=file_dict(machineng)    
-wordcld(dict_tags)
+# dict_tags=file_dict(deepeng)    
+# wordcld(dict_tags)
 
-#plot_bar()
+plot_bar()
 
 
 
