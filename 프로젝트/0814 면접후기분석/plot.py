@@ -37,7 +37,7 @@ def file_dict(file):
     # 제외단어
     word_pop=['면접','후기','것','수','및','글','이','데이터','댓글','머신','딥','러닝',
             '개발자','데이타','나','더','내','글뷰','검색','카카오','블로그','준비','인공','지능','때','그','대해','제',
-            '등','대한','때문']
+            '등','대한','때문','저','의','를','위']
 
     for word in word_pop:
         if word in dict_tags:
@@ -51,11 +51,11 @@ def wordcld(dict_tags):
     # 한글을 분석하기위해 font를 한글로 저장
     path=r'c:\Windows\Fonts\malgun.ttf'
 
-
+    img_mask=np.array(Image.open('computer.svg'))
     wc=WordCloud(font_path=path,width=400,height=400,
                 background_color='white',max_font_size=200,
                 repeat=True,
-                colormap='inferno')
+                colormap='Accent',mask=img_mask)
     cloud=wc.generate_from_frequencies(dict_tags)
 
     plt.figure(figsize=(10,8))
@@ -93,7 +93,7 @@ def plot_bar():
     b=plt.bar(x,bar.loc['데이터엔지니어'],width=0.2,label='데이터엔지니어')
     c=plt.bar(x+0.2,bar.loc['머신러닝엔지니어'],width=0.2,label='머신러닝엔지니어')
     plt.xticks(x,['질문','생각','개발','공부','사용','알고리즘'])
-    plt.title('직업별 면접후기 주요 단어 언급 비율',fontsize=20)
+    plt.title('직업별 면접후기 주요 단어 언급 비율 (티스토리)',fontsize=20)
     plt.xlabel('주요 단어')
     plt.ylabel('언급비율(%)')
     plt.bar_label(a,padding=2)
@@ -112,14 +112,14 @@ developer='developer.csv'
 datasci='datascientist.csv'
 dataeng='dataengineer.csv'
 machineng='machineengineer.csv'
-deppeng='deepengineer.csv'
-ai='ai.csv'
+deepeng='deepengineer.csv'
+#ai='ai.csv'
 
 # 워드 클라우드 플롯
-# dict_tags=file_dict(developer)    
-# wordcld(dict_tags)
+dict_tags=file_dict(machineng)    
+wordcld(dict_tags)
 
-plot_bar()
+#plot_bar()
 
 
 
