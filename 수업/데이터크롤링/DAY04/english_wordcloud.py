@@ -6,8 +6,8 @@ from PIL import Image
 
 text=open('alice.txt').read()
 STOPWORDS.add('said')
-print('STOPWORDS:',STOPWORDS)
-
+#print('STOPWORDS:',STOPWORDS)
+print(text)
 img_mask=np.array(Image.open('cloud.png'))
 
 wordcloud=WordCloud(width=400,height=400,
