@@ -1,0 +1,11 @@
+수업/TORCH_IMAGE/data/mnist_test.csv
+수업/TORCH_IMAGE/data/mnist_train.csv
+수업/TORCH_IMAGE/data/MNIST/raw/t10k-images-idx3-ubyte
+수업/TORCH_IMAGE/data/MNIST/raw/t10k-images-idx3-ubyte.gz
+수업/TORCH_IMAGE/data/MNIST/raw/t10k-labels-idx1-ubyte
+수업/TORCH_IMAGE/data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+수업/TORCH_IMAGE/data/MNIST/raw/train-images-idx3-ubyte
+수업/TORCH_IMAGE/data/MNIST/raw/train-images-idx3-ubyte.gz
+수업/TORCH_IMAGE/data/MNIST/raw/train-labels-idx1-ubyte
+수업/TORCH_IMAGE/data/MNIST/raw/train-labels-idx1-ubyte.gz
+과제/Open CV/0924/model/best_model1.pth
