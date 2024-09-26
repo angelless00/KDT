@@ -9,3 +9,41 @@
 수업/TORCH_IMAGE/data/MNIST/raw/train-labels-idx1-ubyte
 수업/TORCH_IMAGE/data/MNIST/raw/train-labels-idx1-ubyte.gz
 과제/Open CV/0924/model/best_model1.pth
+수업/DL_TORCH/DAY07/cgi-bin/best_model.pth
+프로젝트/0920 weather/model/best_model.pth
+프로젝트/0920 weather/model/best_modelmax1.pth
+프로젝트/0920 weather/model/best_modelmax3.pth
+프로젝트/0920 weather/model/best_modelmax4.pth
+프로젝트/0920 weather/model/best_modelmin1.pth
+프로젝트/0920 weather/model/best_modelmin3.pth
+프로젝트/0920 weather/model/best_modelmin4.pth
+프로젝트/0920 weather/model/best_modelrain1.pth
+프로젝트/0920 weather/model/best_weightmax1.pth
+프로젝트/0920 weather/model/best_weightmax3.pth
+프로젝트/0920 weather/model/best_weightmax4.pth
+프로젝트/0920 weather/model/best_weightmin1.pth
+프로젝트/0920 weather/model/best_weightmin3.pth
+프로젝트/0920 weather/model/best_weightmin4.pth
+프로젝트/0920 weather/model/best_weightrain1.pth
+프로젝트/0920 weather/feature.csv
+프로젝트/0920 weather/target.csv
+프로젝트/0920 weather/total.csv
+과제/DeepLearning/0919/model/best_model.pth
+과제/DeepLearning/0919/model/best_weight.pth
+과제/DeepLearning/0915/fasion_mnist_train.csv
+과제/Open CV/0925/data/CIFAR/batches.meta
+과제/Open CV/0925/data/CIFAR/data_batch_1
+과제/Open CV/0925/data/CIFAR/data_batch_2
+과제/Open CV/0925/data/CIFAR/data_batch_3
+과제/Open CV/0925/data/CIFAR/data_batch_4
+과제/Open CV/0925/data/CIFAR/data_batch_5
+과제/Open CV/0925/data/CIFAR/readme.html
+과제/Open CV/0925/data/CIFAR/test_batch
+수업/TORCH_IMAGE/data/cifar-10-batches-py/batches.meta
+수업/TORCH_IMAGE/data/cifar-10-batches-py/data_batch_1
+수업/TORCH_IMAGE/data/cifar-10-batches-py/data_batch_2
+수업/TORCH_IMAGE/data/cifar-10-batches-py/data_batch_3
+수업/TORCH_IMAGE/data/cifar-10-batches-py/data_batch_4
+수업/TORCH_IMAGE/data/cifar-10-batches-py/data_batch_5
+수업/TORCH_IMAGE/data/cifar-10-batches-py/readme.html
+수업/TORCH_IMAGE/data/cifar-10-batches-py/test_batch

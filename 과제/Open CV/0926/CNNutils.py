@@ -4,6 +4,21 @@ import matplotlib.pyplot as plt
 import os 
 import torch.functional as F
 
+class MyDataSet(Dataset):
+    def __init__(self,feature,target):
+        """ feature 와 target 이 DataFrame 일때"""
+        self.feature=feature
+        self.target=target
+        self.n_rows=feature.shape[0]
+
+    def __len__(self):
+        return self.n_rows
+    
+    def __getitem__(self,index):
+        featureTS=torch.FloatTensor(self.feature.iloc[index].values)
+        targetTS=torch.FloatTensor(self.target.iloc[index].values)
+        return featureTS,targetTS
+
 
 class CNNmodel(nn.Module):
     def __init__(self,kernel,out_out,shape,Knums=[10,5],Pnums=[10]):
