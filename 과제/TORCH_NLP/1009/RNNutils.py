@@ -9,7 +9,7 @@ import os
 def getToken(textlist,tokenizer):
     """한글만 남기고 불용어 제거 및 토큰화"""
     with open('basic_ko_stopwords.txt') as f:
-        stop_words=f.read().split('\n')
+        stop_words=f.read().replace(' ','').split('\n')
     text_to_token=[]
     for idx,text in enumerate(textlist):
         # 한글빼고 다지우기
@@ -17,10 +17,7 @@ def getToken(textlist,tokenizer):
 
         # 토큰 내놔 norm,stem << 참고
         tokens=tokenizer.morphs(text,norm=True,stem=True)
-        for token in tokens:
-            # stop word 체크
-             if token in stop_words:
-                  tokens.remove(token)
+        tokens=[token  for token in tokens if token not in stop_words]
         text_to_token.append(tokens)
 
     return text_to_token
