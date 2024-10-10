@@ -4,18 +4,19 @@ import numpy as np
 import torch
 import os
 
-with open('basic_ko_stopwords.txt') as f:
-    stop_words=f.read().split('\n')
+
 
 def getToken(textlist,tokenizer):
     """한글만 남기고 불용어 제거 및 토큰화"""
+    with open('basic_ko_stopwords.txt') as f:
+        stop_words=f.read().split('\n')
     text_to_token=[]
     for idx,text in enumerate(textlist):
         # 한글빼고 다지우기
         text=re.sub('[^ㄱ-ㅎ가-힣]+',' ',text)
 
         # 토큰 내놔 norm,stem << 참고
-        tokens=tokenizer.morphs(text,norm=True)
+        tokens=tokenizer.morphs(text,norm=True,stem=True)
         for token in tokens:
             # stop word 체크
              if token in stop_words:
@@ -169,7 +170,7 @@ class Train_val():
             
             print(f'[{epoch+1}/{EPOCH}]')
             print(f"train loss {HISTORY['loss'][0][-1]}, train score {HISTORY['score'][0][-1]}")
-            print(f"val loss {HISTORY['loss'][1][-1]}, val score {HISTORY['score'][1][-1]}")
+            print(f"test loss {HISTORY['loss'][1][-1]}, test score {HISTORY['score'][1][-1]}")
 
             # test score 기준으로  scheduler 생성
 
