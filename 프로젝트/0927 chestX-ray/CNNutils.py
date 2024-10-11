@@ -123,7 +123,7 @@ class Train_val():
             
             print(f'[{epoch+1}/{EPOCH}]')
             print(f"train loss {HISTORY['loss'][0][-1]}, train score {HISTORY['score'][0][-1]}")
-            print(f"val loss {HISTORY['loss'][1][-1]}, val score {HISTORY['score'][1][-1]}")
+            print(f"test loss {HISTORY['loss'][1][-1]}, test score {HISTORY['score'][1][-1]}")
 
             # score 기준으로  scheduler 생성
 
