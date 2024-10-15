@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & SELECTOR</title>
+    <!--선택자 {속성:값; 속성:값}-->
+    <style>
+        p{background-color: beige;}
+        #secondP{background-color:cadetblue; color:brown; font-weight: :bold;}
+        body{align-content: center;
+            background-image: url('../cat.jpg');}
+        .mon{background-color: hotpink;}
+    </style>
+</head>
+<body>
+    <h3>CSS 스타일 적용</h3>
+    <!--HTML 태그를 예쁘게 스타일링해주는 역할 CSS-->
+    <p>
+        오늘은 화요일 입니다.<br>
+        비오는 화요일 입니다.<br>
+        비오는 가을입니다.
+    </p>
+
+    <p id="secondP">
+        내일은 수요일 입니다.
+    </p>
+    <!-- id는 단 하나만-->
+
+    <!--여러개 묶고싶다면 class-->
+    <p class="mon">
+        어제는 월요일이었습니다.
+    </p>
+
+    <p class="mon">
+        어제는 월요일이었습니다.
+    </p>
+
+    <p class="mon">
+        어제는 월요일이었습니다.
+    </p>
+</body>
+</html>
