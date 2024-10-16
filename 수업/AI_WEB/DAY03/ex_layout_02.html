@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & TAG</title>
+    <!--내부 CSS 설정-->
+    <!--veiwport - html - body 순으로 부모관계
+    viewport 기준 길이인 vh,vw 단위를 주로 사용-->
+    <style>
+        *{text-align: center;}
+        html{height: 100%;}
+        body{height: 80vh;}
+        header{background-color: aqua;
+            height: 15%;}
+        nav{
+            background-color: bisque;
+            width:20%;
+            float:left;
+            height: 60vh;}
+        section{
+            background-color: chartreuse;
+            width:50%;
+            display: inline-block;
+            height: 60%;
+            margin:10px}
+        aside{
+            background-color: coral;
+            float: right;
+            width:20%;}
+        footer{background-color: cornflowerblue;
+        clear:both}
+    </style>
+    <!--화면구성 float dispaly clear-->
+</head>
+<body>
+    <header><h1>
+        MY PROJECT
+    </h1></header>
+    <nav>
+        <ul>
+            <li><a href="#ml">머신러닝</a></li>
+            <li><a href="#deep">딥러닝</a></li>
+            <li><a href="#vison">비전딥러닝</a></li>
+            <li><a href="#nlp">자연어처리</a></li>
+
+        </ul>
+    </nav>
+    <section>
+        <div id="ml"> 머신러닝</div>
+        <div id="deep"> 딥러닝</div>
+        <div id="vision"> 비전</div>
+        <div id="nlp"> 자연어처리</div>
+    </section>
+    <aside>SIDE</aside>
+    <footer>FOOTER</footer>
+</body>
+</html>
