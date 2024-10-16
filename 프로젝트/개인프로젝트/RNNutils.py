@@ -7,19 +7,14 @@ import os
 
 
 def getToken(textlist,tokenizer):
-    """한글만 남기고 불용어 제거 및 토큰화"""
-    with open('basic_ko_stopwords.txt') as f:
-        stop_words=f.read().replace(' ','').split('\n')
     text_to_token=[]
     for idx,text in enumerate(textlist):
         # 한글빼고 다지우기
-        text=re.sub('[^ㄱ-ㅎ가-힣]+',' ',text)
+        #text=re.sub('[^ㄱ-ㅎ가-힣]+',' ',text)
 
         # 토큰 내놔 norm,stem << 참고
-        tokens=tokenizer.morphs(text,norm=True,stem=True)
-        tokens=[token  for token in tokens if token not in stop_words]
-        if len(tokens)>15:
-            text_to_token.append(tokens)
+        tokens=tokenizer.morphs(text)
+        text_to_token.append(tokens)
 
     return text_to_token
 
@@ -35,6 +30,13 @@ def get_vocab(text_to_token,n_vocab):
     for token,count in counter.most_common(n_vocab):
         vocab.append(token)
     return vocab
+
+def vectorize(tokenlist,token_to_idx):
+    idxlist=[]
+    for tokens in tokenlist:
+        numbers=[token_to_idx.get(token) for token in tokens]
+        idxlist.append(numbers)
+    return idxlist
 
 
 def padding_vectorize(tokenlist,token_to_idx,pad_length):
@@ -105,9 +107,8 @@ class SentenceClassifier(nn.Module):
         return logits
     
 class Train_val():
-    def __init__ (self,trainDL,valDL,model,optimizer,lossF,scoreF):
+    def __init__ (self,trainDL,model,optimizer,lossF,scoreF):
         self.trainDL=trainDL
-        self.valDL=valDL
         self.model=model
         self.lossF=lossF
         self.scoreF=scoreF
@@ -137,16 +138,16 @@ class Train_val():
             HISTORY['loss'][0].append(loss_total/len(self.trainDL))
             HISTORY['score'][0].append(score_total/len(self.trainDL))
 
-            self.model.eval()
-            with torch.no_grad():
-                for feature,target in self.valDL:
-                    val_pre_y=self.model(feature)
+            # self.model.eval()
+            # with torch.no_grad():
+            #     for feature,target in self.valDL:
+            #         val_pre_y=self.model(feature)
 
-                    loss=self.lossF(val_pre_y,target.reshape(-1).long())
-                    score=self.scoreF(val_pre_y,target.reshape(-1))
+            #         loss=self.lossF(val_pre_y,target.reshape(-1).long())
+            #         score=self.scoreF(val_pre_y,target.reshape(-1))
                 
-                HISTORY['loss'][1].append(loss.item())
-                HISTORY['score'][1].append(score.item())
+            #     HISTORY['loss'][1].append(loss.item())
+            #     HISTORY['score'][1].append(score.item())
             
 
             # 모델 폴더가 없다면 생성
@@ -154,12 +155,12 @@ class Train_val():
                 os.mkdir('model/')
 
 
-            # test score가 최고 인점 저장
-            if len(HISTORY['score'][1])==1:
+            # trin score가 최고 인점 저장
+            if len(HISTORY['score'][0])==1:
                 torch.save(self.model,f'model/best_model{modelnum}.pth')
                 #torch.save(self.model.state_dict(),f'model/best_weight{modelnum}.pth')
         
-            elif HISTORY['score'][1][-1]>=min(HISTORY['score'][1]):
+            elif HISTORY['score'][0][-1]>=min(HISTORY['score'][1]):
                 torch.save(self.model,f'model/best_model{modelnum}.pth')
                 #torch.save(self.model.state_dict(),f'model/best_weight{modelnum}.pth')
 
@@ -168,11 +169,11 @@ class Train_val():
             
             print(f'[{epoch+1}/{EPOCH}]')
             print(f"train loss {HISTORY['loss'][0][-1]}, train score {HISTORY['score'][0][-1]}")
-            print(f"test loss {HISTORY['loss'][1][-1]}, test score {HISTORY['score'][1][-1]}")
+            #print(f"test loss {HISTORY['loss'][1][-1]}, test score {HISTORY['score'][1][-1]}")
 
             # test score 기준으로  scheduler 생성
 
-            scheduler.step(HISTORY['score'][1][-1])
+            scheduler.step(HISTORY['score'][0][-1])
             print(f'scheduler.num_bad_epochs { scheduler.num_bad_epochs}/{ scheduler.patience}')
 
             if scheduler.num_bad_epochs >= scheduler.patience:
@@ -180,3 +181,22 @@ class Train_val():
                 break
 
         return HISTORY
+
+
+from torch.utils.data import Dataset
+
+class MyDataSet(Dataset):
+    def __init__(self,feature,target):
+        """ feature 와 target 이 DataFrame 일때"""
+        super().__init__()
+        self.feature=feature
+        self.target=target
+        self.n_rows=feature.shape[0]
+
+    def __len__(self):
+        return self.n_rows
+    
+    def __getitem__(self,index):
+        featureTS=torch.FloatTensor(self.feature.iloc[index].values)
+        targetTS=torch.FloatTensor(self.target.iloc[index].values)
+        return featureTS,targetTS
