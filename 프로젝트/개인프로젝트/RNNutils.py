@@ -197,6 +197,6 @@ class MyDataSet(Dataset):
         return self.n_rows
     
     def __getitem__(self,index):
-        featureTS=torch.FloatTensor(self.feature.iloc[index].values)
-        targetTS=torch.FloatTensor(self.target.iloc[index].values)
+        featureTS=torch.tensor(self.feature.iloc[index].values)
+        targetTS=torch.tensor(self.target.iloc[index].values)
         return featureTS,targetTS

@@ -84,7 +84,6 @@ if SCRIPT_MODE:
 
 # (3) WEB 사용자 입력 데이터 처리
 # (3-1) HTML 코드에서 사용자 입력 받는 form 태그 영역 객체 가져오기
-form = cgi.FieldStorage()
 
 
 

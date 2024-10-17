@@ -34,7 +34,7 @@ MAX_Model=torch.load(MODEL_MAX,weights_only=False)
 # 재 료 : 사용자 입력 데이터, 판별 결과
 # 결 과 : 사용자에게 보여질 HTML 코드
 
-def showHTML(text, msg):
+def showHTML( msg):
     print("Content-Type: text/html; charset=utf-8")
     print(f"""
         <!DOCTYPE html>
@@ -49,6 +49,7 @@ def showHTML(text, msg):
             <iframe src="../navi.html" width="100%" height="350px" frameborder="0" scrolling="no"></iframe>
             <hr/>
             <div class="content">
+                <h1>가을 날씨 예측 프로그램</h1>
                 <img src="../가을.jpg" height="200px">
                 <form>
                     <table>
@@ -66,7 +67,7 @@ def showHTML(text, msg):
                         </tr>
                         <tr>
                             <td>습도</td>
-                            <td><input type="text" name="num"><br></td>
+                            <td><input type="text" name="hum"><br></td>
                         </tr>
 
                         </tr>
@@ -113,12 +114,12 @@ def predict_model(model1,model2, data):
 
             # 추론/평가
             pre_min = model1(dataTS)
-            pre_max=model2(dataTS)
+            pre_max = model2(dataTS)
         return f'내일의 최저기온은 {pre_min.item():.2f}, 최고기온은 {pre_max.item():.2f}도 입니다.'
     
     except Exception as e:
         print(f"Error during prediction: {e}") # 에러 로그 추가
-        return '오류 발생!!'
+        return "오늘 날씨를 입력하세요"
 
 # --------------------------------------------------------------------------
 # 기능 구현 
@@ -154,5 +155,6 @@ if len(text):
     result = predict_model(MIN_Model,MAX_Model, text)
     msg = f"{result}"
 
+
 # (4) 사용자에게 WEB 화면 제공
-showHTML(text, msg)
+showHTML(msg)
