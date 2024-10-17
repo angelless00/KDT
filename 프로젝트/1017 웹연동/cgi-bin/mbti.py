@@ -22,6 +22,15 @@ import utils
 SCRIPT_MODE = True                      # Jupyter Mode : False, WEB Mode : True
 cgitb.enable()                          # Web상에서 진행상태 메시지를 콘솔에서 확인할수 있도록 하는 기능
 
+MODEL_IE=r'C:\KDT\프로젝트\0905 mbti예측\model\best_model_ie.pth'
+MODEL_NS=r'C:\KDT\프로젝트\0905 mbti예측\model\best_model_ns.pth'
+MODEL_FT=r'C:\KDT\프로젝트\0905 mbti예측\model\best_model_ft.pth'
+MODEL_JP=r'C:\KDT\프로젝트\0905 mbti예측\model\best_model_JP.pth'
+IE_model=torch.load(MODEL_IE,weights_only=False)
+NS_model=torch.load(MODEL_NS,weights_only=False)
+FT_model=torch.load(MODEL_FT,weights_only=False)
+JP_model=torch.load(MODEL_JP,weights_only=False)
+
 
 # 사용자 정의 함수----------------------------------------------------------
 # WEB에서 사용자에게 보여주고 입력받는 함수 ---------------------------------
@@ -29,7 +38,7 @@ cgitb.enable()                          # Web상에서 진행상태 메시지를
 # 재 료 : 사용자 입력 데이터, 판별 결과
 # 결 과 : 사용자에게 보여질 HTML 코드
 
-def showHTML():
+def showHTML(msg):
     print("Content-Type: text/html; charset=utf-8")
     print(f"""
         <!DOCTYPE html>
@@ -76,30 +85,31 @@ def showHTML():
                 </form>
             </div>
             <hr/>
+            {msg}
             <iframe id="footer" src="../footer.html" width="100%" height="500px" frameborder="0" scrolling="no" ></iframe>
         </body>
     </html>
     """)
 
-# ---------------------------------------------------------------------
-# 함수 이름 : predice_model()
-# 함수 역할 : 모델 예측 함수
-# 매개 변수 : model, data
-# ---------------------------------------------------------------------
+def predict_model(model1,model2, data):
+    try:
+        #print("오늘의 최저기온, 최고기온, 강수량, 습도를 입력하세요.:", data) # 디버깅용 로그
+        data = map(float, data)
+        dataTS = torch.FloatTensor(list(data)).reshape(1,-1)
 
-# def predict_model(model, data):
-#     data = [data.split(',')]
-#     dataTS = torch.FloatTensor(data).reshape(1,-1)
+        # 검증 모드로 모델 설정
+        model1.eval()
+        model2.eval()
+        with torch.no_grad():
 
-#     # 검증 모드로 모델 설정
-#     model.eval()
-#     with torch.no_grad():
-
-#         # 추론/평가
-#         pre_val=model(dataTS)
-#     # return pre_val
-#     print(f"{msg}")
-
+            # 추론/평가
+            pre_min = model1(dataTS)
+            pre_max = model2(dataTS)
+        return f'내일의 최저기온은 {pre_min.item():.2f}, 최고기온은 {pre_max.item():.2f}도 입니다.'
+    
+    except Exception as e:
+        print(f"Error during prediction: {e}") # 에러 로그 추가
+        return '오류 발생!!'
 
 # --------------------------------------------------------------------------
 # 기능 구현 
@@ -108,6 +118,15 @@ def showHTML():
 if SCRIPT_MODE:
     sys.stdout = codecs.getwriter('utf-8')(sys.stdout.detach()) # 웹에서만 필요 : 표준출력을 utf-8로
 
+# (2) 모델 로딩
+if SCRIPT_MODE:
+    pthfile1 = os.path.dirname(__file__)+ '\best_modelmin4.pth' # 웹상에서는 절대경로만
+    pthfile2 = os.path.dirname(__file__)+ '\best_modelmax1.pth'
+else:
+    pthfile1 = IE_model
+    pthfile2 = FT_model
+#     pthfile3=
+#     pthfile4=
     
 # langModel = joblib.load(pthfile)
 
@@ -115,8 +134,20 @@ if SCRIPT_MODE:
 # (3-1) HTML 코드에서 사용자 입력 받는 form 태그 영역 객체 가져오기
 form = cgi.FieldStorage()
 
+# (3-2) Form안에 textarea 태그 속 데이터 가져오기
+retweet = form.getvalue("retweet", default="")
+hash = form.getvalue("hash", default="")
+favor = form.getvalue("favor", default="")
+url = form.getvalue("url", default="")
+mension = form.getvalue("mension", default="")
+media=form.getvalue("media",default="")
+text=[hash,retweet,favor,url,mension,media]
 
-
+# (3-3) 판별하기
+msg = ""
+if len(text):
+    result = predict_model(IE_model,FT_model, text)
+    msg = f"{result}"
 
 # (4) 사용자에게 WEB 화면 제공
-showHTML()
+showHTML( msg)

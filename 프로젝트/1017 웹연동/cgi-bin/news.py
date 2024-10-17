@@ -43,16 +43,17 @@ def showHTML(text, msg):
         <head>
             <meta charset = 'UTF-8'>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>가을 날씨 예측</title>
+            <title>연예 기사 예측</title>
             <link type="text/css" rel="stylesheet" href="../sub.css">
         </head>
         <body>
             <iframe src="../navi.html" width="100%" height="350px" frameborder="0" scrolling="no"></iframe>
             <hr/>
             <div class="content">
+                <h1>연예기사 한문단을 입력하세요.</h1>
                 <img src="../신문.png" height="200px">
                 <form>
-                    <textarea name="text" cols="50" rows="10" placeholder="기사 한문단을 입력하세요.">{text}</textarea><br>
+                    <textarea name="text" cols="50" rows="10" placeholder="기사 한문단을 입력하세요."></textarea><br>
                     <input type="submit">
                 </form>
             </div>
