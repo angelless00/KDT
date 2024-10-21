@@ -153,7 +153,11 @@ if form.getvalue('xray'):
     result = predict_model(model, data)
     msg = f"{result}"
 #    msg=xray
+<<<<<<< HEAD
 # except Exception as e :                                                                                                                                                                                                                                                                                  
+=======
+# except Exception as e :
+>>>>>>> 66b97b0dfe9e6ae10dd0c1a3123074e55b5a2f47
 #     print(e)
 
 
