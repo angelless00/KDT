@@ -1,0 +1,7 @@
+
+FLAST_APP=MYWEB
+
+
+FLASK_DEBUG=True
+
+FLASK_ENV=development

@@ -16,6 +16,22 @@ def create_app():
     # 라우팅 기능 모듈 ---------------------------------------------------------------------------------------------
     from views import main_views
 
+    
+    # URL 즉, 클라이언트 요청 페이지 주소를 보여줄 기능 함수
+    # def printPage():
+    #     return "<h1>HELLO~</h1>"
+    # # URL 처리 함수 연결
+    # APP.add_url_rule('/',view_func=printPage,endpoint='INDEX')
+    
+    #==> 위의 네줄을 밑의 방식으로 간단히 가능
+
+    # @APP.route('/',endpotint='INDEX')   # 함수 바로위에 적어서 이것이 함수의 주소임을 지정 
+    # def printPage():
+    #     return "<h1>HELLO~</h1>"
+
+
+
+
     APP.register_blueprint(main_views.main_bp)
     
     return APP
@@ -27,6 +43,9 @@ if __name__=='__main__':
     # Flask Web Server 구동
     APP.run()
 
+
+
+    
 
 
 
