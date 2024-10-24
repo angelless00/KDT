@@ -172,7 +172,7 @@ class Train_val():
 
             # test score 기준으로  scheduler 생성
 
-            scheduler.step(HISTORY['score'][1][-1])
+            scheduler.step(HISTORY['loss'][1][-1])
             print(f'scheduler.num_bad_epochs { scheduler.num_bad_epochs}/{ scheduler.patience}')
 
             if scheduler.num_bad_epochs >= scheduler.patience:

@@ -4,6 +4,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt 
+import os
 
 # 데이터셋 분리
 class SeperateSet():
@@ -95,6 +96,10 @@ class Train_val():
                 
                 HISTORY['loss'][1].append(loss.item())
                 HISTORY['score'][1].append(score.item())
+
+            # 모델 폴더가 없다면 생성
+            if not os.path.exists('model/'):
+                os.mkdir('model/')
 
             # val loss가 최저인점 저장
             if len(HISTORY['loss'][1])==1:
