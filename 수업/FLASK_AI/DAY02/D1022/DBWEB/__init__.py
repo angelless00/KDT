@@ -26,6 +26,9 @@ def create_app():
     DB.init_app(APP)
     MIGRATE.init_app(APP,DB)
 
+    # DB 클래스 정의 모듈 로딩
+    from .models import models
+
     # URL 처리 모듈 등록
     from .views import main_view
     APP.register_blueprint(main_view.mainBP)

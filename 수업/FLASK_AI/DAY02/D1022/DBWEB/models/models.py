@@ -20,7 +20,7 @@ class Question(DB.Model):
 
 class Answer(DB.Model):
     id=DB.Column(DB.Integer,primary_key=True)
-    question_id=DB.Column(DB.Integer,DB.Foreignkey('question.id',ondelete='CASCADE'))
+    question_id=DB.Column(DB.Integer,DB.ForeignKey('question.id',ondelete='CASCADE'))
     question=DB.relationship('Question',backref=DB.backref('answer_set',))
     content=DB.Column(DB.Text(),nullable=False)
     create_date=DB.Column(DB.DateTime(),nullable=False)
