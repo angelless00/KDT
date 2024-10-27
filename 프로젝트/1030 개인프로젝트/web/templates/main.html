@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>가사생성프로그램</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/music.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
 </head>
 <body>
     <iframe src="/navi"></iframe>
     <form method="post">
-        <table>
+        <table align="center">
             <tr>
                 <td colspan="2">가사 입력</td>
             </tr>
             <tr>
-                <td colspan="2"> <textarea cols="30" rows="10" placeholder="시작가사를 입력하세요" name="start"></textarea></td>
+                <td colspan="2"> <textarea cols="40" rows="10" placeholder="시작가사를 입력하세요" name="start"></textarea></td>
             </tr>
             <tr>
                 <td> 생성길이입력</td>
