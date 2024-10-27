@@ -101,14 +101,14 @@ class Train_val():
             if not os.path.exists('model/'):
                 os.mkdir('model/')
 
-            # test loss가 최저인점 저장
+            # val loss가 최저인점 저장
             if len(HISTORY['loss'][1])==1:
                 torch.save(self.model,f'model/best_model{modelnum}.pth')
-                # torch.save(self.model.state_dict(),f'model/best_weight{modelnum}.pth')
+                torch.save(self.model.state_dict(),f'model/best_weight{modelnum}.pth')
         
             elif HISTORY['loss'][1][-1]<=min(HISTORY['loss'][1]):
                 torch.save(self.model,f'model/best_model{modelnum}.pth')
-                # torch.save(self.model.state_dict(),f'model/best_weight{modelnum}.pth')
+                torch.save(self.model.state_dict(),f'model/best_weight{modelnum}.pth')
 
 
         
@@ -117,7 +117,7 @@ class Train_val():
             print(f"train loss {HISTORY['loss'][0][-1]}, train score {HISTORY['score'][0][-1]}")
             print(f"test loss {HISTORY['loss'][1][-1]}, test score {HISTORY['score'][1][-1]}")
             
-            # test loss 기준으로 스케쥴러 실행
+            # val loss 기준으로 스케쥴러 실행
             scheduler.step(HISTORY['loss'][1][-1])
             print(f'scheduler.num_bad_epochs { scheduler.num_bad_epochs}/{ scheduler.patience}')
 
