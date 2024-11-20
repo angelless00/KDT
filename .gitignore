@@ -25783,3 +25783,144 @@ pdf/(9) DeepLearning/필수 패키지_NUMPY.pdf
 기업프로젝트/ver0/val_batch2_pred.jpg
 기업프로젝트/weights/best.pt
 기업프로젝트/weights/last.pt
+기업프로젝트/Model/model ver.2/train/weights/best.pt
+기업프로젝트/Model/model ver.2/train/weights/last.pt
+기업프로젝트/Model/model ver.2/train/args.yaml
+기업프로젝트/Model/model ver.2/train/confusion_matrix_normalized.png
+기업프로젝트/Model/model ver.2/train/confusion_matrix.png
+기업프로젝트/Model/model ver.2/train/F1_curve.png
+기업프로젝트/Model/model ver.2/train/labels_correlogram.jpg
+기업프로젝트/Model/model ver.2/train/labels.jpg
+기업프로젝트/Model/model ver.2/train/P_curve.png
+기업프로젝트/Model/model ver.2/train/PR_curve.png
+기업프로젝트/Model/model ver.2/train/R_curve.png
+기업프로젝트/Model/model ver.2/train/results.csv
+기업프로젝트/Model/model ver.2/train/results.png
+기업프로젝트/Model/model ver.2/train/train_batch0.jpg
+기업프로젝트/Model/model ver.2/train/train_batch1.jpg
+기업프로젝트/Model/model ver.2/train/train_batch2.jpg
+기업프로젝트/Model/model ver.2/train/val_batch0_labels.jpg
+기업프로젝트/Model/model ver.2/train/val_batch0_pred.jpg
+기업프로젝트/Model/model ver.2/train/val_batch1_labels.jpg
+기업프로젝트/Model/model ver.2/train/val_batch1_pred.jpg
+기업프로젝트/Model/model ver.2/train/val_batch2_labels.jpg
+기업프로젝트/Model/model ver.2/train/val_batch2_pred.jpg
+기업프로젝트/Model/model ver.2/train/weights/best.pt
+기업프로젝트/Model/model ver.2/train/weights/last.pt
+기업프로젝트/Model/model ver.1/args.yaml
+기업프로젝트/Model/model ver.1/best.pt
+기업프로젝트/Model/model ver.1/confusion_matrix_normalized.png
+기업프로젝트/Model/model ver.1/confusion_matrix.png
+기업프로젝트/Model/model ver.1/F1_curve.png
+기업프로젝트/Model/model ver.1/labels_correlogram.jpg
+기업프로젝트/Model/model ver.1/labels.jpg
+기업프로젝트/Model/model ver.1/P_curve.png
+기업프로젝트/Model/model ver.1/PR_curve.png
+기업프로젝트/Model/model ver.1/R_curve.png
+기업프로젝트/Model/model ver.1/results.csv
+기업프로젝트/Model/model ver.1/results.png
+기업프로젝트/Model/model ver.1/train_batch0.jpg
+기업프로젝트/Model/model ver.1/train_batch1.jpg
+기업프로젝트/Model/model ver.1/train_batch2.jpg
+기업프로젝트/Model/model ver.1/train_batch7920.jpg
+기업프로젝트/Model/model ver.1/train_batch7921.jpg
+기업프로젝트/Model/model ver.1/train_batch7922.jpg
+기업프로젝트/Model/model ver.1/val_batch0_labels.jpg
+기업프로젝트/Model/model ver.1/val_batch0_pred.jpg
+기업프로젝트/Model/model ver.1/val_batch1_labels.jpg
+기업프로젝트/Model/model ver.1/val_batch1_pred.jpg
+기업프로젝트/Model/model ver.1/val_batch2_labels.jpg
+기업프로젝트/Model/model ver.1/val_batch2_pred.jpg
+기업프로젝트/Model/ver1/args.yaml
+기업프로젝트/Model/ver1/best.pt
+기업프로젝트/Model/ver1/confusion_matrix_normalized.png
+기업프로젝트/Model/ver1/confusion_matrix.png
+기업프로젝트/Model/ver1/F1_curve.png
+기업프로젝트/Model/ver1/labels_correlogram.jpg
+기업프로젝트/Model/ver1/labels.jpg
+기업프로젝트/Model/ver1/P_curve.png
+기업프로젝트/Model/ver1/PR_curve.png
+기업프로젝트/Model/ver1/R_curve.png
+기업프로젝트/Model/ver1/results.csv
+기업프로젝트/Model/ver1/results.png
+기업프로젝트/Model/ver1/train_batch0.jpg
+기업프로젝트/Model/ver1/train_batch1.jpg
+기업프로젝트/Model/ver1/train_batch2.jpg
+기업프로젝트/Model/ver1/train_batch7920.jpg
+기업프로젝트/Model/ver1/train_batch7921.jpg
+기업프로젝트/Model/ver1/train_batch7922.jpg
+기업프로젝트/Model/ver1/val_batch0_labels.jpg
+기업프로젝트/Model/ver1/val_batch0_pred.jpg
+기업프로젝트/Model/ver1/val_batch1_labels.jpg
+기업프로젝트/Model/ver1/val_batch1_pred.jpg
+기업프로젝트/Model/ver1/val_batch2_labels.jpg
+기업프로젝트/Model/ver1/val_batch2_pred.jpg
+기업프로젝트/Model/ver2/train/args.yaml
+기업프로젝트/Model/ver2/train/confusion_matrix_normalized.png
+기업프로젝트/Model/ver2/train/confusion_matrix.png
+기업프로젝트/Model/ver2/train/F1_curve.png
+기업프로젝트/Model/ver2/train/labels_correlogram.jpg
+기업프로젝트/Model/ver2/train/labels.jpg
+기업프로젝트/Model/ver2/train/P_curve.png
+기업프로젝트/Model/ver2/train/PR_curve.png
+기업프로젝트/Model/ver2/train/R_curve.png
+기업프로젝트/Model/ver2/train/results.csv
+기업프로젝트/Model/ver2/train/results.png
+기업프로젝트/Model/ver2/train/train_batch0.jpg
+기업프로젝트/Model/ver2/train/train_batch1.jpg
+기업프로젝트/Model/ver2/train/train_batch2.jpg
+기업프로젝트/Model/ver2/train/val_batch0_labels.jpg
+기업프로젝트/Model/ver2/train/val_batch0_pred.jpg
+기업프로젝트/Model/ver2/train/val_batch1_labels.jpg
+기업프로젝트/Model/ver2/train/val_batch1_pred.jpg
+기업프로젝트/Model/ver2/train/val_batch2_labels.jpg
+기업프로젝트/Model/ver2/train/val_batch2_pred.jpg
+기업프로젝트/Model/ver2/train/weights/best.pt
+기업프로젝트/Model/ver2/train/weights/last.pt
+기업프로젝트/Model/ver3/train2/args.yaml
+기업프로젝트/Model/ver3/train2/confusion_matrix_normalized.png
+기업프로젝트/Model/ver3/train2/confusion_matrix.png
+기업프로젝트/Model/ver3/train2/F1_curve.png
+기업프로젝트/Model/ver3/train2/labels_correlogram.jpg
+기업프로젝트/Model/ver3/train2/labels.jpg
+기업프로젝트/Model/ver3/train2/P_curve.png
+기업프로젝트/Model/ver3/train2/PR_curve.png
+기업프로젝트/Model/ver3/train2/R_curve.png
+기업프로젝트/Model/ver3/train2/results.csv
+기업프로젝트/Model/ver3/train2/results.png
+기업프로젝트/Model/ver3/train2/train_batch0.jpg
+기업프로젝트/Model/ver3/train2/train_batch1.jpg
+기업프로젝트/Model/ver3/train2/train_batch2.jpg
+기업프로젝트/Model/ver3/train2/train_batch72270.jpg
+기업프로젝트/Model/ver3/train2/train_batch72271.jpg
+기업프로젝트/Model/ver3/train2/train_batch72272.jpg
+기업프로젝트/Model/ver3/train2/val_batch0_labels.jpg
+기업프로젝트/Model/ver3/train2/val_batch0_pred.jpg
+기업프로젝트/Model/ver3/train2/val_batch1_labels.jpg
+기업프로젝트/Model/ver3/train2/val_batch1_pred.jpg
+기업프로젝트/Model/ver3/train2/val_batch2_labels.jpg
+기업프로젝트/Model/ver3/train2/val_batch2_pred.jpg
+기업프로젝트/Model/ver3/train2/weights/best.pt
+기업프로젝트/Model/ver3/train2/weights/last.pt
+기업프로젝트/Model/ver4/train3/args.yaml
+기업프로젝트/Model/ver4/train3/confusion_matrix_normalized.png
+기업프로젝트/Model/ver4/train3/confusion_matrix.png
+기업프로젝트/Model/ver4/train3/F1_curve.png
+기업프로젝트/Model/ver4/train3/labels_correlogram.jpg
+기업프로젝트/Model/ver4/train3/labels.jpg
+기업프로젝트/Model/ver4/train3/P_curve.png
+기업프로젝트/Model/ver4/train3/PR_curve.png
+기업프로젝트/Model/ver4/train3/R_curve.png
+기업프로젝트/Model/ver4/train3/results.csv
+기업프로젝트/Model/ver4/train3/results.png
+기업프로젝트/Model/ver4/train3/train_batch0.jpg
+기업프로젝트/Model/ver4/train3/train_batch1.jpg
+기업프로젝트/Model/ver4/train3/train_batch2.jpg
+기업프로젝트/Model/ver4/train3/val_batch0_labels.jpg
+기업프로젝트/Model/ver4/train3/val_batch0_pred.jpg
+기업프로젝트/Model/ver4/train3/val_batch1_labels.jpg
+기업프로젝트/Model/ver4/train3/val_batch1_pred.jpg
+기업프로젝트/Model/ver4/train3/val_batch2_labels.jpg
+기업프로젝트/Model/ver4/train3/val_batch2_pred.jpg
+기업프로젝트/Model/ver4/train3/weights/best.pt
+기업프로젝트/Model/ver4/train3/weights/last.pt
