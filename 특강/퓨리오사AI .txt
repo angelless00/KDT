@@ -1,0 +1,44 @@
+퓨리오사AI 
+ 
+Vision Application based on Furiosa AI's WARBOY
+
+행렬곱셈에 이어 인공지능 계산을 빠르게 할수있는 GUI 개발
+
+워보이 1세대 - 비전 어플리케이션 특화
+
+2세대 - 챗지피티 등에 특화 아직 양산 x
+
+인공지능의 발전으로 GPU의 중요성이 가속화
+
+NPU(neural processing Unit) AI 가속 반도체 제작
+
+
+워보이-
+8bit 정수형만 지원하여 양자화를 통해 32t실수형으로 바꿔야하는 단점!
+cnn 연산에 대해서만 지원
+
+-양자화 Qunantization
+float32를 이용하여 int8 로바꾸는!
+
+
+면접
+1 자기PR
+2. 코딩테스트 - 백준수준!
+
+<< 코딩테스트보단 내가 적극적으로 참여함, 적극적으로 행동햇다는 자기PR이 중요!
+
+cv파일 준비!
+개인프로젝트 내용 잘 정리하기!
+000000000000.0.23
+
+능력? 코스트?
+
+linkedin
+김진호 
+jinho.kim @ furiosa.ai
+
+
+
+
+
+

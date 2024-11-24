@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가사생성완료</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/music.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
+</head>
+<body>
+    <iframe src="/navi"></iframe>
+    <hr>
+    {{result}}
+    <hr>
+    <a href="/"> 다시 생성하기</a>
+</body>
+</html>
