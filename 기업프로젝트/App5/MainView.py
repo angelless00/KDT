@@ -37,9 +37,9 @@ import pandas as pd
 #model = YOLO(r"C:\dlrj_rlaudwn\kdt\KDT-2\13.NEMO\APP\App4.1.2\best.pt")
 # 경량화
 #model = YOLO(r"C:\KDT\기업프로젝트\Model\ver5_x_700\weights\best.pt")
-#model=YOLO(r'C:\KDT\기업프로젝트\Model\ver4\train3\weights\best.pt')
+model=YOLO(r'C:\KDT\기업프로젝트\Model\ver4\train3\weights\best.pt')
 # 기존모델
-model=YOLO(r'C:\Users\KDP-30\Downloads\Model (1).pt')
+#model=YOLO(r'C:\Users\KDP-30\Downloads\Model (1).pt')
 ## AR 모델 ##
 
 
@@ -263,7 +263,7 @@ class MainView(QMainWindow, form_class):
             accident=False                   # 사고여부 초기화
             if len(personDF)*len(carDF):        # 차와 사람이 둘다있을경우만 진행
                 for c_idx in carDF.index:
-                    c=carDF.loc[c_idx,'box']
+                    c=carDF.loc[c_idx,'xyxyn']
                     if carDF.loc[c_idx,'class']==2:            # w 방향 가중치
                         w=ratio
                     elif carDF.loc[c_idx,'class']==3:           # a 방향 가중치
@@ -272,10 +272,10 @@ class MainView(QMainWindow, form_class):
                         s=ratio
                     elif carDF.loc[c_idx,'class']==3:           # d 방향 가중치
                         d=ratio
-                    wid=c['x2']-c['x1']         # 차너비
-                    hei=c['y2']-c['y1']         # 차높이
-                    for p in personDF.box:
-                        if ((c['x1']-wid*a<=p['x1']<=c['x2']+wid*d) or (c['x1']-wid*a<=p['x2']<=c['x2']+wid*d)) and ((c['y1']-hei*w<=p['y1']<=c['y2']+hei*s) or (c['y1']-hei*w<=p['y2']<=c['y2']+hei*s)) :
+                    wid=c[2]-c[0]         # 차너비
+                    hei=c[3]-c[1]         # 차높이
+                    for p in personDF.xyxyn:
+                        if ((c[0]-wid*a<=p[0]<=c[2]+wid*d) or (c[0]-wid*a<=p[2]<=c[2]+wid*d)) and ((c[1]-hei*w<=p[1]<=c[3]+hei*s) or (c[1]-hei*w<=p[3]<=c[3]+hei*s)) :
                             accident=True
                             break
             if accident:
@@ -346,6 +346,7 @@ class ThreadOfVideo(QThread, form_class):
                 for r in result:
                     self.frame = r.plot()
                     DF=r.to_df()
+                    DF['xyxyn']=r.boxes.xyxyn.tolist()
                     self.accident_signal.emit(DF)
         
                     
