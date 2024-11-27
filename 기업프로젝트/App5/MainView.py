@@ -254,7 +254,7 @@ class MainView(QMainWindow, form_class):
 
 
 
-        # 차 vs 사람 사고 경고
+    # 차 vs 사람 사고 경고
     def car_accident(self,DF,ratio=0.7):
         if len(DF):
             personDF=DF[(DF['class']==0)|(DF['class']==1)]  # 사람 관련 DF
