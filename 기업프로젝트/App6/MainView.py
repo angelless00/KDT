@@ -109,7 +109,7 @@ class MainView(QMainWindow, form_class):
 
             ###
             self.signal.accident_signal.connect(self.accident_fun)
-            self.cntTh=15           # 프레임 몇번 참아줄껀데?
+            self.cntTh=10           # 프레임 몇번 참아줄껀데?
             self.car_cnt=0
             self.helmet_cnt=0
             self.r1_cnt=0
