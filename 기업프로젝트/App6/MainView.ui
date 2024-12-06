@@ -595,7 +595,7 @@ QPushButton:hover
     <string notr="true">background-color: transparent;</string>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <zorder>img_log</zorder>

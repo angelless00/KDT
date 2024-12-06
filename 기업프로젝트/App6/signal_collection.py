@@ -29,6 +29,7 @@ class collectionOfSignals(QObject):
     # drawing
     rect_info_signal = pyqtSignal(str,int, int, int, int)
 
+    log_fps_signal = pyqtSignal(int, float, int)
     # drawing - PaintView
     # rect_signal = pyqtSignal(int, int, int, int)
     def __init__(self):

@@ -1,0 +1,3 @@
+5번카메라_현대공장_취객_헬멧.mp4 0 case_car 2024_12_06 video_path
+Detect_test_Cam5.MP4 0 case_helmet 2024_12_06 video_path
+Detect_test_Cam5.MP4 0 case_helmet 2024_12_06 video_path

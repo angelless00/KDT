@@ -95,7 +95,7 @@ QPushButton:hover
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/img/img/확인_30.png</normaloff>:/img/img/확인_30.png</iconset>
    </property>
    <property name="iconSize">
@@ -251,7 +251,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgb
 background-color: transparent;</string>
    </property>
    <property name="text">
-    <string>drawingArea_Label</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="rect2_info">
@@ -320,7 +320,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgb
     <string notr="true">border: 1px solid lightgray;</string>
    </property>
    <property name="text">
-    <string>PreViewLabel</string>
+    <string/>
    </property>
   </widget>
   <zorder>label_6</zorder>
@@ -338,7 +338,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgb
   <zorder>previewArea</zorder>
  </widget>
  <resources>
-  <include location="resources_drawing.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections>
   <connection>

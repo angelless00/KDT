@@ -63,8 +63,8 @@ QPushButton:hover
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/file/img/open-folder.png</normaloff>:/file/img/open-folder.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/img/img/open-folder.png</normaloff>:/img/img/open-folder.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -89,8 +89,8 @@ QPushButton:hover
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/bump/img/충돌.png</normaloff>:/bump/img/충돌.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/img/img/충돌.png</normaloff>:/img/img/충돌.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -128,8 +128,8 @@ QPushButton:hover
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/area/img/위험구역_35.png</normaloff>:/area/img/위험구역_35.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/img/img/위험구역_35.png</normaloff>:/img/img/위험구역_35.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -151,7 +151,7 @@ QPushButton:hover
     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 255));</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/alarm/img/파일_50.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/img/img/파일_50.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -167,7 +167,7 @@ QPushButton:hover
     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 255));</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/file/img/현재_35.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/img/img/현재_35.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBox">
@@ -195,8 +195,8 @@ QCheckBox::indicator {
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/hat/img/안전모 유무.png</normaloff>:/hat/img/안전모 유무.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/img/img/안전모 유무.png</normaloff>:/img/img/안전모 유무.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -224,107 +224,7 @@ QCheckBox::indicator {
     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 255));</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/alarm/img/알람설정_50.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>430</y>
-     <width>281</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 255));</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/rag/img/구역지정_50.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>490</y>
-     <width>121</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{background-color: #ffffff;
-selection-color: #ffffff;
-color: #ffffff;
-
-border: 1px solid  #000000;
-border-radius: 7px;
-padding-right: 5px; 
-padding-left: 5px;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-
-QPushButton:hover
-{
-	background-color: #F28B30;
-	border: 1px solid  #000000;
-}</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/rag/img/그리기_35.png</normaloff>:/rag/img/그리기_35.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>64</width>
-     <height>64</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>490</y>
-     <width>121</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{background-color: #ffffff;
-selection-color: #ffffff;
-color: #ffffff;
-
-border: 1px solid  #000000;
-border-radius: 7px;
-padding-right: 5px; 
-padding-left: 5px;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-
-QPushButton:hover
-{
-	background-color: #F28B30;
-	border: 1px solid  #000000;
-}</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/rag/img/초기화_35.png</normaloff>:/rag/img/초기화_35.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>64</width>
-     <height>64</height>
-    </size>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/img/img/알람설정_50.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
@@ -336,23 +236,42 @@ QPushButton:hover
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{background-color: #ffffff;
+selection-color: #ffffff;
+color: #ffffff;
+
+border: 1px solid  #000000;
+border-radius: 7px;
+padding-right: 5px; 
+padding-left: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+QPushButton:hover
+{
+	background-color: #F28B30;
+	border: 1px solid  #000000;
+}</string>
+   </property>
    <property name="text">
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="resources_setting.qrc">
-     <normaloff>:/rag/img/초기화_24.png</normaloff>:/rag/img/초기화_24.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/img/img/초기화_35.png</normaloff>:/img/img/초기화_35.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>64</width>
-     <height>64</height>
+     <width>43</width>
+     <height>43</height>
     </size>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="resources_setting.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
