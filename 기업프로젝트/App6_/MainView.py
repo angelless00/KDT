@@ -225,10 +225,11 @@ class MainView(QMainWindow, form_class):
         show_file=logfile_list[-1]      # 일단 마지막파일 보여주는걸로! 나중에 오늘날짜로 수정하기
         # 리스트로 불러와서 한줄씩 보여줌
         with open('log/'+show_file,encoding='utf-8') as f :
-            text=f.readlines()
+            logs=f.readlines()
+            log_list2=[i.strip('\n').split(' ') for i in logs]
 
-        for i in text:
-            self.Log_list.addItem(f"{i}")
+        for i in log_list2:
+            self.Log_list.addItem(f"{i[:-1]}")
 
 
 
