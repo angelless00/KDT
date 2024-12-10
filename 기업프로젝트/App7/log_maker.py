@@ -165,7 +165,7 @@ class ThreadOfLogMaker(QThread):
             x1=min(self.rect1_x1,self.rect1_x1+self.rect1_x2)/2050
             y1=min(self.rect1_y1,self.rect1_y1+self.rect1_y2)/1150
             x2=max(self.rect1_x1,self.rect1_x1+self.rect1_x2)/2050
-            y2=max(self.rect1_y1,self.rect1_y2)/1150
+            y2=max(self.rect1_y1,self.rect1_y1+self.rect1_y2)/1150
             if len(DF):
                 for idx in DF.index:
                     c=DF.loc[idx,'xyxyn']
@@ -185,7 +185,7 @@ class ThreadOfLogMaker(QThread):
             x1=min(self.rect2_x1,self.rect2_x1+self.rect2_x2)/2050
             y1=min(self.rect2_y1,self.rect2_y1+self.rect2_y2)/1150
             x2=max(self.rect2_x1,self.rect2_x1+self.rect2_x2)/2050
-            y2=max(self.rect2_y1,self.rect2_y2)/1150
+            y2=max(self.rect2_y1,self.rect2_y1+self.rect2_y2)/1150
             if len(DF):
                 carDF=DF[~( (DF['class']==0) | (DF['class']==1))]
                 if len(carDF):
@@ -207,7 +207,7 @@ class ThreadOfLogMaker(QThread):
             x1=min(self.rect3_x1,self.rect3_x1+self.rect3_x2)/2050
             y1=min(self.rect3_y1,self.rect3_y1+self.rect3_y2)/1150
             x2=max(self.rect3_x1,self.rect3_x1+self.rect3_x2)/2050
-            y2=max(self.rect3_y1,self.rect3_y2)/1150
+            y2=max(self.rect3_y1,self.rect3_y1+self.rect3_y2)/1150
             if len(DF):
                 personDF=DF[(DF['class']==0) | (DF['class']==1)]
                 if len(personDF):

@@ -67,6 +67,8 @@ class ThreadOfVideo(QThread, form_class):
         # 로그 생성 쓰레드
         # self.logmaker_threade = threading.Thread(target=self.accident_fun, daemon=True)
         self.logmaker = ThreadOfLogMaker(self.signal, self.video_file)
+        self.frame_number   = 1.0
+        self.delay=0
 
 
     # 여기서 signal로 메인 스레드로 그냥 신호만 주는 식으로 영상 처리하는.... 고.
@@ -84,7 +86,7 @@ class ThreadOfVideo(QThread, form_class):
 
             while self.running:
                 self.ret, self.frame = cap.read()  # 알아서 0번부터 끝까지 착실히 넘어가면서 수행
-                
+                self.frame_number = cap.get(cv2.CAP_PROP_POS_FRAMES)
                 # 이전, 이후 이벤트 발생
                 if self.move_control == "after":
                     self.now_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
@@ -112,15 +114,18 @@ class ThreadOfVideo(QThread, form_class):
                         self.p = self.pixmap.scaled(2050, 1150, QtCore.Qt.IgnoreAspectRatio)  # 프레임 크기 조정 1920, 1080 후보 1
                         self.current_time = cap.get(cv2.CAP_PROP_POS_MSEC) * 0.001  # 밀리초 단위 현재 위치
                         self.frame_number = cap.get(cv2.CAP_PROP_POS_FRAMES)
-                        if type(int(self.frame_number) % int(self.fps)) is int:   # 이게 int값 되는 순간인디
-                            print(f"self.fps : {self.fps}, self.frame_number : {self.frame_number}")
-                            self.signal.video_playing_signal.emit(self.current_time)  # video_playing_signal을 통해 메인쓰레드로 변수 전송               
-                            self.signal.silder_signal.emit(self.length, self.fps, self.current_time)
+
+
+                        print(f"self.fps : {self.fps}, self.frame_number : {self.frame_number}")
+                        self.signal.video_playing_signal.emit(self.current_time)  # video_playing_signal을 통해 메인쓰레드로 변수 전송               
+                        self.signal.silder_signal.emit(self.length, self.fps, self.current_time)
+                        
+
                         self.signal.pixmap_signal.emit(self.p)
                         self.video_frame.update()  # 프레임 띄우기
-                        self.predicted_frame = None
-                        delay = int(1000/self.fps)
-                        cv2.waitKey(delay)  # fps에 맞게 프레임 지연이라는데 이게 sleep이랑 같은 역할을 하나?
+                        time.sleep(1/self.fps)
+                    else:
+                        self.ret = cap.set(cv2.CAP_PROP_POS_FRAMES, self.frame_number-1)
                 else:
                     break
             cap.release()
@@ -145,17 +150,28 @@ class ThreadOfVideo(QThread, form_class):
     def model_predict(self):
             ## AR 모델 ##
             while self.running:
-                result = model.predict(self.frame)
-                for r in result:
-                    self.frame = r.plot()
-                    DF=r.to_df()
-                    DF['xyxyn']=r.boxes.xyxyn.tolist()
-                    self.signal.accident_signal.emit(DF)
-                ## AR 모델 ##
-                self.predicted_frame = self.frame
-                delay = int(1000/self.fps)
-                cv2.waitKey(delay)  # fps에 맞게 프레임 지연이라는데 이게 sleep이랑 같은 역할을 하나?
+                
+                # 일시 정지 이벤트 발생
+                if self.pause:
+                    time.sleep(1)
+                    continue
 
+                if self.frame is not None:
+                    result = model.predict(source=self.frame)
+                    for r in result:
+                        self.frame = r.plot()
+                        DF=r.to_df()
+                        DF['xyxyn']=r.boxes.xyxyn.tolist()
+                        self.signal.accident_signal.emit(DF)
+                        break
+        
+                    ## AR 모델 ##
+                    self.predicted_frame = self.frame
+                    time.sleep(1/self.fps)
+                    
+
+
+#
 
 
         # self.logvideo = ThreadOflogVideo(self.signal, self.video_file)  # 여따가 파일 이름, 시그널 넣기
