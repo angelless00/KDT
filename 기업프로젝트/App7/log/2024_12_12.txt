@@ -1,0 +1,4 @@
+지게차_사람_군집.mp4 0 case_car 2024_12_12 video_path
+지게차_사람_군집.mp4 0 case_helmet 2024_12_12 video_path
+지게차_사람_군집.mp4 0 case_car 2024_12_12 video_path
+지게차_사람_군집.mp4 0 case_helmet 2024_12_12 video_path
